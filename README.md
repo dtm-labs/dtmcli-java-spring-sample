@@ -1,1 +1,2 @@
-dtmcli-java-spring-sample
+# dtmcli-java-spring-sample
+sample of spring client for dtm
