@@ -1,6 +1,5 @@
 package pub.dtm.sample.controller;
 
-import com.google.gson.Gson;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +10,7 @@ import pub.dtm.client.barrier.BranchBarrier;
 import pub.dtm.client.constant.Constants;
 import pub.dtm.client.exception.FailureException;
 import pub.dtm.client.model.responses.DtmResponse;
+import pub.dtm.client.utils.JsonUtils;
 import pub.dtm.sample.param.TransReq;
 import pub.dtm.sample.utils.DataSourceUtil;
 
@@ -125,7 +125,7 @@ public class TransBarrierController {
      */
     private TransReq extracted(HttpServletRequest request) throws IOException {
         byte[] bytes = StreamUtils.copyToByteArray(request.getInputStream());
-        return new Gson().fromJson(new String(bytes), TransReq.class);
+        return JsonUtils.parseJson(bytes, TransReq.class);
     }
 
     /**

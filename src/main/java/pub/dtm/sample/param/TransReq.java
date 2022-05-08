@@ -11,6 +11,8 @@ public class TransReq {
      */
     private int amount;
 
+    public TransReq(){}
+
     public TransReq(int userId, int amount) {
         this.userId = userId;
         this.amount = amount;
