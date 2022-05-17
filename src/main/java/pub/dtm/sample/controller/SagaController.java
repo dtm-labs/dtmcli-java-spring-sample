@@ -9,8 +9,6 @@ import pub.dtm.client.DtmClient;
 import pub.dtm.client.model.feign.ServiceMessage;
 import pub.dtm.client.saga.Saga;
 
-import java.util.UUID;
-
 /**
  * @author horseLk
  * @date 2022-05-08 17:02
