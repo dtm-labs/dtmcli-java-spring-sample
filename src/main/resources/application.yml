@@ -1,0 +1,33 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: dtmcli-spring-sample
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/dtm_barrier?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+## 如果您使用的springboot版本为2.5.x，请使用dtmcli-springcloud@2.1.0.1，且设置如下配置
+#    compatibility-verifier:
+#      enabled: false
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: '127.0.0.1:8848'
+        service: ${spring.application.name}
+        namespace: c3dc917d-906a-429d-90a9-85012b41014e
+        username: nacos
+        password: nacos
+        register-enabled: true
+        ip: 127.0.0.1
+        port: 8888
+feign:
+  hystrix:
+    enabled: true
+dtm:
+  service:
+    name: dtmService
+    registry-type: nacos
+#debug: true
