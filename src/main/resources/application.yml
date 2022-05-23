@@ -9,9 +9,6 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
-## 如果您使用的springboot版本为2.5.x，请使用dtmcli-springcloud@2.1.0.1，且设置如下配置
-#    compatibility-verifier:
-#      enabled: false
     nacos:
       discovery:
         enabled: true
